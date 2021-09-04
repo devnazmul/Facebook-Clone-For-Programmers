@@ -5,13 +5,11 @@ const bcrypt = require('bcrypt');
 const userRouter = express.Router();
 
 const User = require('../../models/User');
-const { json } = require('body-parser');
-
 
 /*  
-    @ Route   :   User Registration
-    @ Desc    :   User Registration
-    @Security :   Public
+    @ route   /routers/api/user/register
+    @ desc    User Registration
+    @access   Public
 */
 userRouter.post('/register', (req, res) => {
   User.findOne({ email: req.body.email }).exec()
