@@ -1,5 +1,7 @@
 /backend/node_modules
 /backend/pakage-lock.json
+/backend/yarn-error.log
+/backend/yarn.lock
 /backend/.env
 
 /frontend/node_modules
