@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const passport = require('passport');
 //Init Express App
 const app = express();
 
@@ -8,10 +8,12 @@ require('dotenv').config();
 
 //Using Middlewares
 app.use(express.json());
-
+app.use(passport.initialize());
+//passport Config
+require('./config/passport')(passport);
 //DB Config
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017')
+mongoose.connect('mongodb://127.0.0.1:27017/programmers_valley')
         .then(console.log(`Database is connected......`))
         .catch(err => console.log(err));
 
